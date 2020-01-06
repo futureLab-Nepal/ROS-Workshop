@@ -1,0 +1,55 @@
+Basic ROS command cheatlist
+
+ROS Workspace Environment
+ -> Default workspace loaded with
+	> source /opt/ros/<ros_version>/setup.bash
+
+ -> Overlay your workspace 
+	> cd <path_to_your_workspace 
+	> source devel/setup.bash
+ -> Check your workspace with
+	> echo $ROS_PACKAGE_PATH
+
+ROS Master
+ -> Start a master with
+	> roscore
+
+ROS Nodes
+ -> Run a node with
+	> rosrun <package_name> <node_name>
+ -> See active nodes with
+	> rosnode list
+ -> Retrieve information about a node with
+	> rosnode info <node_name>
+
+ROS Topics
+ -> List active topics with
+	> rostopic list
+ -> Subscribe and print the contents of a topic with
+	> rostopic echo /topic
+ -> Show information about a topic with
+	> rostopic info /topic
+ -> See the type of a topic 
+	> rostopic type /topic
+ -> Publish a message to a topic
+	> rostopic pub /topic type args 
+ -> To see the arguments of a topic 
+	>rosmsg show <message_Type>
+
+ROS launch
+  used in order to run group of nodes at once 
+ -> Launch a launch file to run multiple nodes 
+	> roslaunch <package_name> <launch_file_name.launch>
+
+ROS packages
+  used to see installed packages in your system
+ -> see all the packages
+	> rospack list
+ -> see the fitered list of packages 
+	> rospack list | grep <package_name> 
+
+In order to navigate to specific ros packages 
+	> roscd <package_name>
+
+To see the graphical relationship between different nodes and topics 
+	< rqt_graph
